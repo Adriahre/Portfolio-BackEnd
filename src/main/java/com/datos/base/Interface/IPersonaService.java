@@ -9,6 +9,6 @@ import java.util.List;
 public interface IPersonaService {
     public List<Persona> getPersonas();
     public void savePersona (Persona perso);
-    public void deltePersona (long id);
+    public void deletePersona (long id);
     public Persona findPersona (long id);
 }

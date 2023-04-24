@@ -1,6 +1,9 @@
 com\datos\base\WebConfig.class
+com\datos\base\Security\Entity\Rol.class
 com\datos\base\entity\Persona.class
+com\datos\base\Security\Entity\Usuario.class
 com\datos\base\repository\PersonaRepository.class
+com\datos\base\Security\Enums\RolNombre.class
 com\datos\base\service\PersonaService.class
 com\datos\base\BaseApplication.class
 com\datos\base\controler\PersonaController.class

@@ -28,7 +28,7 @@ public class PersonaService implements IPersonaService{
     }
 
     @Override
-    public void deltePersona(long id) {
+    public void deletePersona(long id) {
         persoRepository.deleteById(id); 
     }
 

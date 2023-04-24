@@ -34,7 +34,7 @@ public class PersonaController {
     
     @DeleteMapping ("/personas/borrar/{id}")
     public String deletePersona (@PathVariable long id){
-        interPersona.deltePersona(id);
+        interPersona.deletePersona(id);
         return "La persona fue borrada exitosamente";
     }
     
@@ -50,5 +50,10 @@ public class PersonaController {
         
         interPersona.savePersona(perso);
         return perso;
+    }
+    
+    @GetMapping ("personas/traer/perfil")
+    public Persona findPersona(){
+        return interPersona.findPersona((long)2);
     }
 }
