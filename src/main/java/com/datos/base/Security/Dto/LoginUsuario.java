@@ -3,6 +3,7 @@ package com.datos.base.Security.Dto;
 
 import jakarta.validation.constraints.NotBlank;
 
+
 public class LoginUsuario {
     @NotBlank
     private String nombreUsuario;
