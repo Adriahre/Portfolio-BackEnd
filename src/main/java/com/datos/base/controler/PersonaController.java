@@ -5,6 +5,7 @@ import com.datos.base.Interface.IPersonaService;
 import com.datos.base.entity.Persona;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,22 +23,28 @@ public class PersonaController {
     private IPersonaService interPersona;
     
     @GetMapping("/personas/traer")
-    public List<Persona> getPersonas(){
-        return interPersona.getPersonas();
+    public List<Persona> getPersona(){
+        return interPersona.getPersona();
     }
     
+    
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping ("/personas/crear")
     public String createStudent(@RequestBody Persona perso){
         interPersona.savePersona(perso);
         return "La persona fue creada correctamente";
     }
     
+    
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping ("/personas/borrar/{id}")
     public String deletePersona (@PathVariable long id){
         interPersona.deletePersona(id);
         return "La persona fue borrada exitosamente";
     }
     
+    
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("personas/editar/{id}")
     public Persona editPersona (@PathVariable long id,
                                 @RequestParam ("nombre") String nuevoNombre,
@@ -52,6 +59,8 @@ public class PersonaController {
         return perso;
     }
     
+    
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping ("personas/traer/perfil")
     public Persona findPersona(){
         return interPersona.findPersona((long)2);
