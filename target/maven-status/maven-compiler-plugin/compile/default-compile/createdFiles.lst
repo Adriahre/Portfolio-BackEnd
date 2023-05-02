@@ -15,6 +15,7 @@ com\datos\base\service\PersonaService.class
 com\datos\base\BaseApplication.class
 com\datos\base\Security\Service\UserDetailsImpl.class
 com\datos\base\Security\MainSecurity.class
+.netbeans_automatic_build
 com\datos\base\Security\Controller\Mensaje.class
 com\datos\base\Security\Controller\AuthController.class
 com\datos\base\Security\Service\UsuarioService.class
